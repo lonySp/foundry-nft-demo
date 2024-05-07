@@ -20,7 +20,7 @@
 // view & pure functions
 
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.20;
+pragma solidity 0.8.18;
 
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
@@ -43,7 +43,7 @@ contract MoodNft is ERC721, Ownable {
 
     event CreatedNFT(uint256 indexed tokenId);
 
-    constructor(string memory sadSvgUri, string memory happySvgUri) ERC721("Mood NFT", "MN") Ownable(msg.sender) {
+    constructor(string memory sadSvgUri, string memory happySvgUri) ERC721("Mood NFT", "MN") Ownable() {
         s_tokenCounter = 0;
         s_sadSvgUri = sadSvgUri;
         s_happySvgUri = happySvgUri;
